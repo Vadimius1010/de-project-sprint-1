@@ -20,5 +20,3 @@ with t as (
 select user_id, ntile(5) over (order by monetary_value) monetary_value
 from t
 where row_num = 1
-
-select * from tmp_rfm_monetary_value 

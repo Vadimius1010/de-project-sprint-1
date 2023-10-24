@@ -7,7 +7,7 @@ insert into analysis.tmp_rfm_frequency (user_id, frequency)
 with t as (
 	select user_id,
 		   count(case
-	             when status = 4 then 1 -- Для анализа нужно отобрать только успешно выполненные заказы.
+	             when status = 4 then 1
 	             end) order_count
 	from analysis.orders o 
 	group by user_id 
