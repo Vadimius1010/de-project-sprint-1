@@ -3,12 +3,12 @@ select user_id,
        recency, 
        frequency, 
        monetary_value
-from tmp_rfm_recency trr
-join tmp_rfm_frequency trf using(user_id)
-join tmp_rfm_monetary_value trmv using(user_id)
+from analysis.tmp_rfm_recency trr
+join analysis.tmp_rfm_frequency trf using(user_id)
+join analysis.tmp_rfm_monetary_value trmv using(user_id)
 
 select *
-from dm_rfm_segments drs 
+from analysis.dm_rfm_segments drs 
 order by user_id 
 limit 10
 
